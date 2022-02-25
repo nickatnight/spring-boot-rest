@@ -1,0 +1,52 @@
+server:
+  port: 8082
+
+spring:
+  profiles:
+    active: qa
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    username:
+    url: jdbc:postgresql://localhost:5432/dcbapp
+    driverClassName: org.postgresql.Driver
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to my world!
+
+---
+spring:
+  profiles: qa
+  datasource:
+    username:
+    url: jdbc:postgresql://localhost:5432/dcbapp-qa
+    driverClassName: org.postgresql.Driver
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to my world!
+
+---
+spring:
+  profiles: prod
+  datasource:
+    username:
+    url: jdbc:postgresql://localhost:5432/dcbapp-prod
+    driverClassName: org.postgresql.Driver
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to my world!
